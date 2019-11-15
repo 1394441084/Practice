@@ -6,7 +6,9 @@
 
 using namespace std;
 
-void Subscript_0_10() {
+//C++用数组把数字0-10转换为大写
+void Array_method()
+{
 	int Subscript = 0;
 	string Figures[11] = { "零","壹","贰","叁","肆","伍","陆","柒","捌","玖","拾" };
 	printf("请输入数字0-10\n");
@@ -19,14 +21,10 @@ void Subscript_0_10() {
 		}
 	}
 }
-
-int main(void) {
-
-	Subscript_0_10();
-
-	/*
-	int Figures=0;//数字
-	int Times=0;//次数
+//C++用switch方法来进行转换
+void switch_Method() {
+	int Figures = 0;//数字
+	int Times = 0;//次数
 	cout << "请输入一个0-10的数字进行转换\n";
 	while (cin >> Figures) {
 		switch (Figures) {
@@ -71,7 +69,14 @@ int main(void) {
 			}
 		}
 	}
-	*/
+}
+
+int main(void) {
+	//把数字0-10转换为大写
+	//用数组方法进行转换C++
+	Array_method();
+	//用switch方法来进行转换C++
+	switch_Method();
 	system("pause");
 	return 0;
 }
