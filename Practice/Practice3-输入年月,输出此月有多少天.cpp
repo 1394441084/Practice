@@ -43,7 +43,6 @@ void Year_month_day() {
 	}
 }
 
-
 int main(void) {
 	Year_month_day();
 	system("pause");
