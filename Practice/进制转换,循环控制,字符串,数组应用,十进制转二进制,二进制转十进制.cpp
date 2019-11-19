@@ -4,7 +4,7 @@
 
 using namespace std;
 
-//输入一个整数,转换为二进制输出.
+//输入十进制,转换为二进制输出.
 int Base_conversion(){
 	while (1) {
 		int Decimal_system = 0;//输入的十进制
@@ -30,10 +30,32 @@ int Base_conversion(){
 	}
 }
 
+//输入一个二进制数,转换为十进制
+void Binary_conversion() {
+	/*123=1*100(百位)+2*10(十位)+3*1(个位);
+	  1011=[1*(2^3)]+[0*(2^2)]+[1*(2^1)]+[1*(2的0次方)]
+	  2的0次方是1（任何数的0次方都是1，0的0次方无意义）
+	  =1*8+0*4+1*2+1*1=11;*/
+	string Binary_system;//二进制
+	int Weight_value = 1;//权值
+	int Sum_of_powers = 0;//次方和
+
+	cout << "请输入一个二进制数:";
+	cin >> Binary_system;
+
+	//字符串.length(),计算字符串长度函数;
+	for (int Subscript = Binary_system.length() - 1; Subscript >= 0; Subscript--) {
+		int Get_an_integer = Binary_system[Subscript] - '0';//'0'-'0'=0;'1'-'0'=1;字符串转换成整数完成
+		//次方和+=取得整数*权值,得到的次方和进行累加,循环结束得十进制数
+		Sum_of_powers += Get_an_integer * Weight_value;
+		Weight_value *= 2;//权值变化,2^0,2^1,依次
+	}
+	//所得十进制数,这里打印了
+	cout << Sum_of_powers << endl;
+}
 
 int main(void) {
-
-	Base_conversion();
+	Binary_conversion();
 	system("pause");
 	return 0;
 }
