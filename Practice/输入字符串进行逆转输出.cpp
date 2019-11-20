@@ -12,15 +12,14 @@ void Reverse_string() {
 	cout << "请输入需要逆转的字符串:\n";
 	cin >> String;
 
-	i = 0;
-	j = String.length() - 1;
-	while (i<j) {//字符串123456789
-
-		char tmp = String[i];//String[0]=1
+	i = 0;//下标的头
+	j = String.length() - 1;//下标的尾
+	while (i<j) {//例字符串:123456789
+		char tmp = String[i];//String[0]=1暂存到tmp中,
 		String[i] = String[j];//String[i]=9
-		String[j] = tmp;
-		i++;
-		j--;
+		String[j] = tmp;//String[j] = 1;
+		i++;//头前进,
+		j--;//尾后退,两者相遇跳出循环,5的位置没变化过
 	}
 	cout << String << endl;
 }
