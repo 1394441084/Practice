@@ -1,6 +1,5 @@
 #include <iostream>
 #include <Windows.h>
-#include <string>
 
 using namespace std;
 
@@ -53,8 +52,26 @@ void A_thousand_chickensand_a_hundred_dollars1() {
 		}
 	}
 }
+
+void A_thousand_chickensand_a_hundred_dollars2() {
+	int i = 1;
+	for (int Rooster = 1; Rooster <= 20; Rooster++) {//公鸡
+		for (int Hens = 1; Hens <= 33; Hens++) {//母鸡
+			for (int Chicken = 3; Chicken <=33; Chicken=Chicken+3) {//小鸡买一次花10元得3只
+				if (Rooster + Hens + Chicken == 100 && Rooster * 50 + Hens * 30 + Chicken/3* 10 == 1000) {
+					cout << "第" << i << "种买法\n";
+					cout << "公鸡+母鸡+小鸡=" << Rooster + Hens + Chicken << "只\n";
+					cout << "公鸡钱+母鸡钱+小鸡钱=" << Rooster * 50 + Hens * 30 + Chicken/3*10 << "钱\n";
+					cout << "公鸡:" << Rooster << "只 母鸡:" << Hens << "只 小鸡:" << Chicken << "只\n" << endl;
+					i++;
+				}
+			}
+		}
+	}
+}
+
 int main(void) {
-	A_thousand_chickensand_a_hundred_dollars1();
+	A_thousand_chickensand_a_hundred_dollars2();
 	system("pause");
 	return 0;
 }
