@@ -30,24 +30,30 @@ void Reverse_string_output() {
 	987 654 321 整句反过来
 	789 456 123 单词为单位反过来
 	*/
-	string string0;
-	int i, j; i = 0; j = 0;
 	while (1) {
+		string string0;
+		int i, j; i = 0; j = 0;
+
 		cout << "请输入需要逆转的字符串:\n";
 		getline(cin, string0);//输入一行字符串
 		j = string0.length() - 1;
+
+		//字符串全逆转
 		while (i < j) {
 			char c = string0[i];
 			string0[i] = string0[j];
 			string0[j] = c;
 			i++; j--;
 		}
-		cout << string0 << endl;
-		i = 0;
+
+		i = 0;//重置
+
+		//进行单个单词逆转
 		while (string0[i]) {
-			while (string0[i] == ' ')i++;
-			j = i;
+			while (string0[i] == ' ')i++;j = i;
+
 			while (string0[j] && string0[j] != ' ')j++;
+
 			for (int k1 = i, k2 = j - 1; k1 < k2; k1++, k2--) {
 				char c = string0[k1]; string0[k1] = string0[k2]; string0[k2] = c;
 			}
